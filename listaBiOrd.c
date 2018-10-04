@@ -6,7 +6,7 @@ ListaBiOrd LiSTABIORD_crea(){
     list.pri = (Nodo *) malloc (sizeof(Nodo));  // Creamos primer nodo fantasma
 
     if (list.pri == NULL){  // Error creación primer nodo
-        printf("\nError");
+        printf("\nError al crear lista");
     }
     else {
         list.ult = (Nodo *) malloc (sizeof(Nodo)); // Creamos segundo nodo fantasma
@@ -14,7 +14,7 @@ ListaBiOrd LiSTABIORD_crea(){
         if(list.pri == NULL){   //Error creación segundo nodo
             free(list.pri);
             list.pdi == NULL;
-            printf("\nError");
+            printf("\nError al crear lista");
         }
         else {
             //Nodos se autoapuntan y punteros de concatenación se dejan vacíos
@@ -29,7 +29,39 @@ ListaBiOrd LiSTABIORD_crea(){
 }
 
 void LISTABIORD_insertaOrd(ListaBiOrd *list, int elemento){
+    Nodo *aux;
+    int stop = 0;
 
+    aux = (Nodo *) malloc (sizeof(Nodo));   // Creamos Nodo nuevo elemento
+
+    if (aux == NULL){
+        printf("\nError al insertar elemento");
+    }
+    else {
+
+        //Asignamos valores y direcciones a nuevo nodo
+        aux -> elemento = elemento;
+        lista -> pdi = lista -> pri -> sig;
+
+        //Bucle para encontrar valor en lista con elemento mayor al elemento introducido por el usuario o lista vacía
+        //Se le asigna PDI a esta posicion
+        while(lista -> pdi -> sig != NULL && !stop){
+
+            if(lista -> pdi -> elemento < elemento){
+                lista -> pdi = lista -> pdi -> sig;
+            }
+            else {
+                stop = 1;
+            }
+        }
+
+        // Se inserta el nuevo nodo delante del PDI
+        aux -> sig = lista -> pdi;
+        aux -> ant = lista -> pdi -> ant;
+        lista -> pdi -> ant -> sig = aux;
+        lista -> pd -> ant = aux;
+
+    }
 }
 
 int LISTABIORD_consulta(ListaBiOrd list){
