@@ -72,6 +72,7 @@ int LISTABIORD_consulta(ListaBiOrd list){
         elemento = -1;
         printf("\nError al consultar valor");
     }
+
     else {
         elemento = lista.pdi -> elemento;
     }
@@ -80,7 +81,20 @@ int LISTABIORD_consulta(ListaBiOrd list){
 }
 
 void LISTABIORD_elimina(ListaBi *list){
+    Nodo *aux;
 
+    // Error lista vacía
+    if(lista -> pdi == lista -> pri || lista -> pdi = lista -> ult){
+        printf("\nError al eliminar elemento");
+    }
+
+    else {
+        aux = lista -> pdi;  // Guarda dirección del elemento que queremos eliminar
+        aux -> ant -> sig = aux -> sig;
+        aux -> sig -> ant = aux -> ant;
+        lista -> pdi = lista -> pdi -> sig;
+        free(aux);  //Elimina elemento
+    }
 }
 
 void LISTABIORD_avanza (ListaBi *list){
