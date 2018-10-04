@@ -65,7 +65,18 @@ void LISTABIORD_insertaOrd(ListaBiOrd *list, int elemento){
 }
 
 int LISTABIORD_consulta(ListaBiOrd list){
+    int elemento;
 
+    if(lista.pdi == lista.pri || lista.pdi == lista.ult){
+        //valor indefinido de error
+        elemento = -1;
+        printf("\nError al consultar valor");
+    }
+    else {
+        elemento = lista.pdi -> elemento;
+    }
+
+    return elemento;
 }
 
 void LISTABIORD_elimina(ListaBi *list){
