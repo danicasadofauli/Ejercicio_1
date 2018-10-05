@@ -107,7 +107,12 @@ void LISTABIORD_avanza (ListaBi *list){
 }
 
 void LISTABIORD_retrocede (ListaBi *list){
-
+    if (lista -> pdi == lista -> pri){
+        printf("Error al retroceder en la lista");
+    }
+    else {
+        lista -> pdi = lista-> pdi -> ant;
+    }
 }
 
 void LISTABIORD_vesInicio (ListaBi *list){
