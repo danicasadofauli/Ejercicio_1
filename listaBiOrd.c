@@ -98,7 +98,12 @@ void LISTABIORD_elimina(ListaBi *list){
 }
 
 void LISTABIORD_avanza (ListaBi *list){
-
+    if (lista -> pdi == lista -> ult){
+        printf("Error al avanzar en la lista");
+    }
+    else {
+        lista -> pdi = lista-> pdi -> sig;
+    }
 }
 
 void LISTABIORD_retrocede (ListaBi *list){
