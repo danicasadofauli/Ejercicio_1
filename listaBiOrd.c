@@ -8,7 +8,7 @@
 *
 **********************************************************************************************************************/
 
-ListaBiOrd LiSTABIORD_crea(){
+ListaBiOrd LISTABIORD_crea(){
     ListaBiOrd list;
 
     list.pri = (Nodo *) malloc (sizeof(Nodo));  // Creamos primer nodo fantasma
