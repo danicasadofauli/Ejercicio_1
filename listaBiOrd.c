@@ -124,11 +124,11 @@ void LISTABIORD_vesFinal (ListaBi *list){
 }
 
 int LISTABIORD_inicio (ListaBi list){
-
+    return lista.pdi == lista.pri;
 }
 
 int LISTABIORD_final (ListaBi list){
-
+    return  lista.pdi == lista.ult;
 }
 
 void LISTABIORD_destruye (ListaBi *list){
