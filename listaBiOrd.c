@@ -116,11 +116,11 @@ void LISTABIORD_retrocede (ListaBi *list){
 }
 
 void LISTABIORD_vesInicio (ListaBi *list){
-
+    lista -> pdi = lista -> pri -> sig;
 }
 
 void LISTABIORD_vesFinal (ListaBi *list){
-
+    lista -> pdi = lista -> ult -> ant;
 }
 
 int LISTABIORD_inicio (ListaBi list){
