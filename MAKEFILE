@@ -4,4 +4,4 @@ main.o: main.c llista.h
 llista.o: llista.c llista.h
 	  gcc -c llista.c
 llista.exe: main.c llista.c
-	    gcc -o llista.exe main.c llista.c -l. -ggdb
+	    gcc -o llista.exe main.c llista.c -Wall -Wextra -ggdb
