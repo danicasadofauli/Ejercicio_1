@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "listaBiOrd.h"
+#include "llista.h"
 
 int main(){
     //int elemento;

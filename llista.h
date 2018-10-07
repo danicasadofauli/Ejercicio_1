@@ -1,5 +1,5 @@
-#ifndef _LISTABIORD_H_
-#define _LISTABIORD_H_
+#ifndef _LLISTA_H_
+#define _LLISTA_H_
 
 typedef struct N {
     int elemento;
