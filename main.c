@@ -4,7 +4,7 @@
 int main(){
     //int elemento;
     // int i;
-    ListaBi lista;
+    ListaBiOrd lista;
 
     LiSTABIORD_crea(&lista);
     printf("\n\nLista creada");
@@ -27,7 +27,7 @@ int main(){
         LISTABIORD_avanza(&lista);
     }
 
-    printf("\n\nOrdenados elementos de principio a fin);
+    printf("\n\nOrdenados elementos de principio a fin");
     printf("\n--------------------------------------------");
 
     LISTABIORD_vesFinal(&lista);
@@ -37,11 +37,11 @@ int main(){
         LISTABIORD_retrocede(&lista);
     }
 
-    printf("\n\nOrdenados elementos de fin a principio);
+    printf("\n\nOrdenados elementos de fin a principio");
     printf("\n--------------------------------------------");
 
     LISTABIORD_vesInicio(&lista);
-    LISTABIORD_elimina(&list);
+    LISTABIORD_elimina(&lista);
 
     while (!LISTABIORD_final(lista)){
         printf("\n%d", LISTABIORD_consulta(lista));
@@ -52,7 +52,7 @@ int main(){
     printf("\n--------------------------------------------");
 
 
-    LISTABIORD_destruye(&list);
+    LISTABIORD_destruye(&lista);
 
     printf("\n\nLista destruida\n");
 }
