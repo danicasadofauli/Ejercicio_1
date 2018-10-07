@@ -21,7 +21,6 @@ ListaBiOrd LISTABIORD_crea(){
 
         if(lista.pri == NULL){   //Error creación segundo nodo
             free(lista.pri);
-            lista.pdi == NULL;
             printf("\nError al crear lista");
         }
         else {
