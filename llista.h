@@ -14,16 +14,15 @@ typedef struct {
 } ListaBiOrd;
 
 ListaBiOrd LiSTABIORD_crea();
-void LISTABIORD_insertaOrd(ListaBiOrd *list, int elemento);
-int LISTABIORD_consulta(ListaBiOrd list);
-void LISTABIORD_elimina(ListaBiOrd *list);
-void LISTABIORD_avanza (ListaBiOrd *list);
-void LISTABIORD_retrocede (ListaBiOrd *list);
-void LISTABIORD_vesInicio (ListaBiOrd *list);
-void LISTABIORD_vesFinal (ListaBiOrd *list);
-int LISTABIORD_inicio (ListaBiOrd list);
-int LISTABIORD_final (ListaBiOrd list);
-void LISTABIORD_destruye (ListaBiOrd *list);
+void LISTABIORD_insertaOrd(ListaBiOrd *lista, int elemento);
+int LISTABIORD_consulta(ListaBiOrd lista);
+void LISTABIORD_elimina(ListaBiOrd *lista);
+void LISTABIORD_avanza (ListaBiOrd *lista);
+void LISTABIORD_retrocede (ListaBiOrd *lista);
+void LISTABIORD_vesInicio (ListaBiOrd *lista);
+void LISTABIORD_vesFinal (ListaBiOrd *lista);
+int LISTABIORD_inicio (ListaBiOrd lista);
+int LISTABIORD_final (ListaBiOrd lista);
+void LISTABIORD_destruye (ListaBiOrd *lista);
 
 #endif
-
