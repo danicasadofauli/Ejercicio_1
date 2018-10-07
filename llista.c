@@ -33,7 +33,7 @@ ListaBiOrd LISTABIORD_crea(){
         }
     }
 
-    return list;
+    return lista;
 }
 
 /*********************************************************************************************************************
@@ -77,7 +77,7 @@ void LISTABIORD_insertaOrd(ListaBiOrd *lista, int elemento){
         aux -> sig = lista -> pdi;
         aux -> ant = lista -> pdi -> ant;
         lista -> pdi -> ant -> sig = aux;
-        lista -> pd -> ant = aux;
+        lista -> pdi -> ant = aux;
 
     }
 }
@@ -119,7 +119,7 @@ void LISTABIORD_elimina(ListaBiOrd *lista){
     Nodo *aux;
 
     // Error lista vacía
-    if(lista -> pdi == lista -> pri || lista -> pdi = lista -> ult){
+    if(lista -> pdi == lista -> pri || lista -> pdi == lista -> ult){
         printf("\nError al eliminar elemento");
     }
 
@@ -200,7 +200,7 @@ void LISTABIORD_vesFinal (ListaBiOrd *lista){
 *
 **********************************************************************************************************************/
 
-int LISTABIORD_inicio (ListaBiOrd list){
+int LISTABIORD_inicio (ListaBiOrd lista){
     return lista.pdi == lista.pri;
 }
 

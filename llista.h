@@ -2,6 +2,7 @@
 #define _LLISTA_H_
 
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct N {
     int elemento;
@@ -12,10 +13,10 @@ typedef struct N {
 typedef struct {
     Nodo *pri;
     Nodo *ult;
-    Nodo *pdi
+    Nodo *pdi;
 } ListaBiOrd;
 
-ListaBiOrd LiSTABIORD_crea();
+ListaBiOrd LISTABIORD_crea();
 void LISTABIORD_insertaOrd(ListaBiOrd *lista, int elemento);
 int LISTABIORD_consulta(ListaBiOrd lista);
 void LISTABIORD_elimina(ListaBiOrd *lista);

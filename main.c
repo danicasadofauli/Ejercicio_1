@@ -1,12 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "llista.h"
 
-int main(){
+void main(){
     //int elemento;
     // int i;
     ListaBiOrd lista;
 
-    LiSTABIORD_crea(&lista);
+    LISTABIORD_crea(&lista);
     printf("\n\nLista creada");
     printf("\n--------------------------------------------");
 
@@ -55,4 +56,5 @@ int main(){
     LISTABIORD_destruye(&lista);
 
     printf("\n\nLista destruida\n");
+
 }
