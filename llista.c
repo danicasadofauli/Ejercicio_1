@@ -115,7 +115,7 @@ int LISTABIORD_consulta(ListaBiOrd list){
 *
 **********************************************************************************************************************/
 
-void LISTABIORD_elimina(ListaBi *list){
+void LISTABIORD_elimina(ListaBiOrd *list){
     Nodo *aux;
 
     // Error lista vacía
@@ -140,7 +140,7 @@ void LISTABIORD_elimina(ListaBi *list){
 *
 **********************************************************************************************************************/
 
-void LISTABIORD_avanza (ListaBi *list){
+void LISTABIORD_avanza (ListaBiOrd *list){
     if (lista -> pdi == lista -> ult){
         printf("Error al avanzar en la lista");
     }
@@ -157,7 +157,7 @@ void LISTABIORD_avanza (ListaBi *list){
 *
 **********************************************************************************************************************/
 
-void LISTABIORD_retrocede (ListaBi *list){
+void LISTABIORD_retrocede (ListaBiOrd *list){
     if (lista -> pdi == lista -> pri){
         printf("Error al retroceder en la lista");
     }
@@ -174,7 +174,7 @@ void LISTABIORD_retrocede (ListaBi *list){
 *
 **********************************************************************************************************************/
 
-void LISTABIORD_vesInicio (ListaBi *list){
+void LISTABIORD_vesInicio (ListaBiOrd *list){
     lista -> pdi = lista -> pri -> sig;
 }
 
@@ -186,7 +186,7 @@ void LISTABIORD_vesInicio (ListaBi *list){
 *
 **********************************************************************************************************************/
 
-void LISTABIORD_vesFinal (ListaBi *list){
+void LISTABIORD_vesFinal (ListaBiOrd *list){
     lista -> pdi = lista -> ult -> ant;
 }
 
@@ -200,7 +200,7 @@ void LISTABIORD_vesFinal (ListaBi *list){
 *
 **********************************************************************************************************************/
 
-int LISTABIORD_inicio (ListaBi list){
+int LISTABIORD_inicio (ListaBiOrd list){
     return lista.pdi == lista.pri;
 }
 
@@ -214,7 +214,7 @@ int LISTABIORD_inicio (ListaBi list){
 *
 **********************************************************************************************************************/
 
-int LISTABIORD_final (ListaBi list){
+int LISTABIORD_final (ListaBiOrd list){
     return  lista.pdi == lista.ult;
 }
 
@@ -226,7 +226,7 @@ int LISTABIORD_final (ListaBi list){
 *
 **********************************************************************************************************************/
 
-void LISTABIORD_destruye (ListaBi *list){
+void LISTABIORD_destruye (ListaBiOrd *list){
     Nodo *aux;
 
     while (lista -> pri != NULL){
