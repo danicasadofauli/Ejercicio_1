@@ -17,7 +17,7 @@ typedef struct {
 } ListaBiOrd;
 
 ListaBiOrd LISTABIORD_crea();
-void LISTABIORD_insertaOrd(ListaBiOrd *lista, int elemento);
+ListaBiOrd LISTABIORD_insertaOrd(ListaBiOrd lista, int elemento);
 int LISTABIORD_consulta(ListaBiOrd lista);
 void LISTABIORD_elimina(ListaBiOrd *lista);
 void LISTABIORD_avanza (ListaBiOrd *lista);

@@ -4,19 +4,20 @@
 
 void main(){
     //int elemento;
-    // int i;
+    char i;
+
     ListaBiOrd lista;
 
-    LISTABIORD_crea(&lista);
+    lista = LISTABIORD_crea();
     printf("\n\nLista creada");
     printf("\n--------------------------------------------");
 
     // printf("\nInserte elementos en la lista. Introduzca el valor '0' para dejar de insertar elementos");
-    LISTABIORD_insertaOrd(&lista, 5);
-    LISTABIORD_insertaOrd(&lista, 9);
-    LISTABIORD_insertaOrd(&lista, 1);
-    LISTABIORD_insertaOrd(&lista, 6);
-    LISTABIORD_insertaOrd(&lista, 3);
+    lista = LISTABIORD_insertaOrd(lista, 5);
+    lista = LISTABIORD_insertaOrd(lista, 9);
+    lista = LISTABIORD_insertaOrd(lista, 1);
+    lista = LISTABIORD_insertaOrd(lista, 6);
+    lista = LISTABIORD_insertaOrd(lista, 3);
 
     printf("\n\nIntroducidos elementos aleatoriamente en el siguiente orden: 5, 9, 1, 6, y 3");
     printf("\n--------------------------------------------");
@@ -34,7 +35,7 @@ void main(){
     LISTABIORD_vesFinal(&lista);
 
     while (!LISTABIORD_inicio(lista)){
-        printf("%d", LISTABIORD_consulta(lista));
+        printf("\n%d", LISTABIORD_consulta(lista));
         LISTABIORD_retrocede(&lista);
     }
 
@@ -56,5 +57,8 @@ void main(){
     LISTABIORD_destruye(&lista);
 
     printf("\n\nLista destruida\n");
+
+    printf("\nIntroduzca letra para continuar\n");
+    scanf("%c", &i);
 
 }

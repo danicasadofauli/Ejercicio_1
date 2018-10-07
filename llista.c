@@ -27,7 +27,9 @@ ListaBiOrd LISTABIORD_crea(){
             //Nodos se autoapuntan y punteros de concatenación se dejan vacíos
             lista.pri -> sig = lista.ult;
             lista.pri -> ant = NULL;
+            lista.pri -> elemento = -1;
             lista.ult -> sig = NULL;
+            lista.ult -> elemento = -1;
             lista.pdi = lista.ult;
         }
     }
@@ -45,7 +47,8 @@ ListaBiOrd LISTABIORD_crea(){
 *
 **********************************************************************************************************************/
 
-void LISTABIORD_insertaOrd(ListaBiOrd *lista, int elemento){
+/*ListaBiOrd LISTABIORD_insertaOrd(ListaBiOrd lista, int elemento){
+    int valor = -1;
     Nodo *aux;
     int stop = 0;
 
@@ -55,30 +58,111 @@ void LISTABIORD_insertaOrd(ListaBiOrd *lista, int elemento){
         printf("\nError al insertar elemento");
     }
     else {
-
+        lista.pdi = lista.pri;
         //Asignamos valores y direcciones a nuevo nodo
         aux -> elemento = elemento;
-        lista -> pdi = lista -> pri -> sig;
 
-        //Bucle para encontrar valor en lista con elemento mayor al elemento introducido por el usuario o lista vacía
-        //Se le asigna PDI a esta posicion
-        while(lista -> pdi -> sig != NULL && !stop){
-
-            if(lista -> pdi -> elemento < elemento){
-                lista -> pdi = lista -> pdi -> sig;
-            }
-            else {
-                stop = 1;
-            }
+        if (lista.pri -> sig == lista.ult){
+          aux -> sig = lista.pdi -> sig;
+          aux -> ant = lista.pdi;
+          lista.pdi -> sig -> ant = aux;
+          lista.pdi -> sig = aux;
         }
 
-        // Se inserta el nuevo nodo delante del PDI
-        aux -> sig = lista -> pdi;
-        aux -> ant = lista -> pdi -> ant;
-        lista -> pdi -> ant -> sig = aux;
-        lista -> pdi -> ant = aux;
+        else {
+
+          LISTABIORD_avanza(&lista);
+
+          while(!stop) {
+            if(LISTABIORD_final(lista)){
+              // Se inserta el nuevo nodo delante del PDI
+              aux -> sig = lista.pdi;
+              aux -> ant = lista.pdi -> ant;
+              lista.pdi -> ant -> sig = aux;
+              lista.pdi -> ant = aux;
+              stop = 1;
+            }
+
+            else {
+              if(valor < elemento){
+                  //Bucle para encontrar valor en lista con elemento mayor al elemento introducido por el usuario o lista vacía
+                valor = LISTABIORD_consulta(lista);
+                printf(".-%d-\n", valor);
+                printf(".-%d-.\n", elemento);
+                LISTABIORD_avanza(&lista);
+              }
+
+              else {
+                // Se inserta el nuevo nodo delante del PDI
+                aux -> sig = lista.pdi;
+                aux -> ant = lista.pdi -> ant;
+                lista.pdi -> ant -> sig = aux;
+                lista.pdi -> ant = aux;
+                stop = 1;
+              }
+
+            }
+
+          }
+
+        }
+    }
+
+    return lista;
+} */
+
+ListaBiOrd LISTABIORD_insertaOrd(ListaBiOrd lista, int elemento){
+    int valor = -1;
+    Nodo *aux;
+    int stop = 0;
+
+    aux = (Nodo *) malloc (sizeof(Nodo));   // Creamos Nodo nuevo elemento
+
+    if (aux == NULL){
+        printf("\nError al insertar elemento");
+    }
+    else {
+        lista.pdi = lista.pri;
+        //Asignamos valores y direcciones a nuevo nodo
+        aux -> elemento = elemento;
+        
+        if (lista.pri -> sig == lista.ult){
+          aux -> sig = lista.pdi -> sig;
+          aux -> ant = lista.pdi;
+          lista.pdi -> sig -> ant = aux;
+          lista.pdi -> sig = aux;
+        }
+
+        else {
+
+          LISTABIORD_avanza(&lista);
+
+          while(!stop) {
+            if(LISTABIORD_final(lista) || elemento < valor){
+              // Se inserta el nuevo nodo delante del PDI
+              aux -> sig = lista.pdi;
+              aux -> ant = lista.pdi -> ant;
+              lista.pdi -> ant -> sig = aux;
+              lista.pdi -> ant = aux;
+              stop = 1;
+            }
+
+            else {
+                  //Bucle para encontrar valor en lista con elemento mayor al elemento introducido por el usuario o lista vacía
+                LISTABIORD_avanza(&lista);
+                valor = LISTABIORD_consulta(lista);
+            }
+
+
+
+          }
+
+        }
+
 
     }
+
+    return lista;
 }
 
 /*********************************************************************************************************************
